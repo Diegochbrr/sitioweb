@@ -1,0 +1,234 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fosforízate - Restaurante de Comida de Mar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Encabezado y Navegación -->
+    <header>
+        <h1 class="animate__animated animate__fadeInDown">Fosforízate</h1>
+        <p class="animate__animated animate__fadeInDown">El Sabor del Mar en Cada Bocado</p>
+        <nav>
+            <ul>
+                <li><a href="#inicio" onclick="mostrarSeccion('inicio')">Inicio</a></li>
+                <li><a href="#producto" onclick="mostrarSeccion('producto')">Nuestros Platos</a></li>
+                <li><a href="#quienes-somos" onclick="mostrarSeccion('quienes-somos')">Quienes Somos</a></li>
+                <li><a href="#contactos" onclick="mostrarSeccion('contactos')">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main>
+  <section id="inicio" class="seccion activa">
+    <h2 class="animate__animated animate__fadeInUp">Bienvenidos a Fosforízate</h2>
+    <p>Restaurante de comida costera con un ambiente relajado y familiar. Fosforízate ofrece una experiencia única, donde los comensales pueden disfrutar de platos frescos y deliciosos mientras se sumergen en la atmósfera de una playa tropical.</p>
+
+    <!-- Carrusel de imágenes -->
+    <div class="carousel">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn7WUb8Bd_9PsHDMABAhd-OTDlzvOo2pXCLg&s" alt="Imagen de plato 1">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSobfRf2KANgaj0WFacCT36YzdgL_1c2zkxgQ&s" alt="Imagen de plato 2">
+        <img src="https://www.instagram.com/p/CpsdHZarvlR/" alt="imagen plato 3">
+    </div>
+
+    <!-- Contador regresivo para promoción especial -->
+    <div class="promocion">
+        <h3>¡No te pierdas nuestra promoción!</h3>
+        <p>Reserva ahora y obtén un 10% de descuento en tu primera visita.</p>
+        <p id="contador"></p>
+    </div>
+
+    
+
+    <!-- Redes Sociales -->
+    <div class="redes-sociales">
+        <h3>¡Síguenos en redes sociales!</h3>
+        <p>No olvides seguirnos para estar al tanto de nuestras novedades y promociones.</p>
+        <a href="https://www.facebook.com/Fosforizate" target="_blank"><i class="fab fa-facebook icono-redes"></i> Facebook</a>
+        <a href="https://www.instagram.com/Fosforizate" target="_blank"><i class="fab fa-instagram icono-redes"></i> Instagram</a>
+        <a href="https://twitter.com/Fosforizate" target="_blank"><i class="fab fa-twitter icono-redes"></i> Twitter</a>
+    </div>
+
+    <!-- Mapa de ubicación -->
+    <div id="mapa" style="width: 100%; height: 300px;"></div>
+
+    <!-- Botón de Reserva de Mesa -->
+    <button onclick="mostrarReserva()" class="animate__animated animate__pulse">Reserva tu Mesa</button>
+</section>
+
+
+
+<section id="producto" class="seccion">
+    <h2>Nuestros Platos</h2>
+    <p>Descubre nuestros deliciosos platos, elaborados con ingredientes frescos y llenos de sabor.</p>
+
+    <div class="menu">
+        <ul>
+            <li>
+                <h3>1. Tartar de Atún</h3>
+               <img src="https://cdn5.recetasdeescandalo.com/wp-content/uploads/2015/09/Receta-de-tartar-de-atun-rojo-y-aguacate.jpg" alt="Tartar de Atún">
+                <p>Delicioso tartar de atún fresco con aguacate, cebolla morada y aderezo cítrico.</p>
+                <p class="precio">$45,000 COP</p>
+                <button class="agregar-carrito" data-plato="Tartar de Atún" data-precio="45000">Agregar al Carrito</button>
+            </li>
+            <li>
+                <h3>2. Paella de Mariscos</h3>
+              <img src="https://mojo.generalmills.com/api/public/content/_RBO1nvTxUe9m4o5nfEjag_gmi_hi_res_jpeg.jpeg?v=5e3706d8&t=16e3ce250f244648bef28c5949fb99ff" alt="Paella de Mariscos">
+                <p>Tradicional paella con arroz, mariscos frescos, y un toque de azafrán.</p>
+                <p class="precio">$80,000 COP</p>
+                <button class="agregar-carrito" data-plato="Paella de Mariscos" data-precio="80000">Agregar al Carrito</button>
+            </li>
+            <li>
+                <h3>3. Sopa de Mariscos</h3>
+              <img src="https://www.recetas-guatemala.com/base/stock/Recipe/128-image/128-image_web.jpg.webp" alt="Sopa de Mariscos">
+                <p>Sopa cremosa con una mezcla de mariscos, acompañada de pan tostado.</p>
+                <p class="precio">$30,000 COP</p>
+                <button class="agregar-carrito" data-plato="Sopa de Mariscos" data-precio="30000">Agregar al Carrito</button>
+            </li>
+            <li>
+                <h3>4. Ensalada de Pulpo</h3>
+               <img src="https://comedera.com/wp-content/uploads/sites/9/2023/03/ensalada-de-pulpo-con-papas.jpg?w=500&h=500&crop=1" alt="Ensalada de pulpo">
+                <p>Ensalada fresca con pulpo a la parrilla, tomates cherry, pepino y aderezo de limón.</p>
+                <p class="precio">$35,000 COP</p>
+                <button class="agregar-carrito" data-plato="Ensalada de Pulpo" data-precio="35000">Agregar al Carrito</button>
+            </li>
+            <li>
+                <h3>5. Ceviche Peruano</h3>
+               <img src="https://cdn0.recetasgratis.net/es/posts/7/4/1/ceviche_peruano_18147_600.jpg" alt="Ceviche Peruano">
+                <p>Ceviche de pescado fresco marinado en limón con cebolla morada, cilantro y ají.</p>
+                <p class="precio">$28,000 COP</p>
+                <button class="agregar-carrito" data-plato="Ceviche Peruano" data-precio="28000">Agregar al Carrito</button>
+            </li>
+            <li>
+                <h3>6. Tacos de Pescado</h3>
+               <img src="https://myplate-prod.azureedge.us/sites/default/files/styles/large/public/2020-10/FishTacos_527x323.jpg?itok=BFdk38Cq" alt="Tacos de pescado">
+                <p>Tacos con filete de pescado empanizado, salsa de aguacate y repollo rallado.</p>
+                <p class="precio">$18,000 COP</p>
+                <button class="agregar-carrito" data-plato="Tacos de Pescado" data-precio="18000">Agregar al Carrito</button>
+            </li>
+            <li>
+                <h3>7. Langosta a la Parrilla</h3>
+               <img src="https://images.immediate.co.uk/production/volatile/sites/54/2023/11/221120231700652698.jpeg?quality=90&resize=556,505" alt="Langosta a la parilla">
+                <p>Langosta a la parrilla acompañada de mantequilla de ajo y hierbas frescas.</p>
+                <p class="precio">$120,000 COP</p>
+                <button class="agregar-carrito" data-plato="Langosta a la Parrilla" data-precio="120000">Agregar al Carrito</button>
+            </li>
+            <li>
+                <h3>8. Filete de Salmón</h3>
+               <img src="https://comedera.com/wp-content/uploads/sites/9/2016/10/receta-salmon-a-la-plancha.jpg" alt="Filete de salmon">
+                <p>Salmón fresco a la parrilla con una salsa de mostaza y miel, acompañado de verduras al vapor.</p>
+                <p class="precio">$55,000 COP</p>
+                <button class="agregar-carrito" data-plato="Filete de Salmón" data-precio="55000">Agregar al Carrito</button>
+            </li>
+            <li>
+                <h3>9. Tartar de Salmón</h3>
+               <img src="https://comedera.com/wp-content/uploads/sites/9/2018/11/tartar-de-salmon.jpg?w=500&h=477&crop=1" alt="tartar de salmon">
+                <p>Tartar de salmón fresco con cebollas caramelizadas, alcaparras y salsa de soja.</p>
+                <p class="precio">$48,000 COP</p>
+                <button class="agregar-carrito" data-plato="Tartar de Salmón" data-precio="48000">Agregar al Carrito</button>
+            </li>
+            <li>
+                <h3>10. Sushi Roll Fosforízate</h3>
+               <img src="https://cdn7.kiwilimon.com/recetaimagen/36349/640x640/44971.jpg.jpg" alt="Sushi Roll Fosforizate">
+                <p>Un rollo de sushi especial con aguacate, pepino, y pescado fresco, cubierto con sésamo y mayonesa picante.</p>
+                <p class="precio">$38,000 COP</p>
+                <button class="agregar-carrito" data-plato="Sushi Roll Fosforízate" data-precio="38000">Agregar al Carrito</button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Carrito -->
+<div id="carrito">
+    <h3>Carrito de Compras</h3>
+    <ul id="lista-carrito">
+        <!-- Los elementos del carrito se agregarán aquí -->
+    </ul>
+    <!-- Botón para hacer el pedido -->
+    <button id="hacer-pedido">Hacer Pedido</button>
+
+    <p id="total">Total: $0 COP</p>
+    <button id="vaciar-carrito">Vaciar Carrito</button>
+</div>
+</section>
+
+
+
+     <section id="quienes-somos" class="seccion">
+    <h2>Quiénes Somos</h2>
+    <div class="contenido-quienes-somos">
+        <div class="texto">
+            <p>En <strong>Fosforízate</strong>, nos apasiona ofrecerte la frescura y autenticidad de los sabores del mar. Desde nuestros inicios, hemos trabajado con dedicación para convertirnos en el lugar favorito de quienes aman la comida costera.</p>
+            <p>Nuestro equipo de chefs crea platos únicos con ingredientes frescos y locales, asegurando que cada bocado sea una experiencia culinaria inolvidable. Además, nuestro ambiente está diseñado para transportarte a la tranquilidad de una playa tropical, donde el buen comer y los buenos momentos se encuentran.</p>
+            <p><strong>Ven y descubre por qué somos el restaurante de comida de mar más querido de la región.</strong></p>
+        </div>
+        <div class="imagenes">
+            <img src="https://scontent.fbaq5-1.fna.fbcdn.net/v/t1.6435-9/118342247_1395927123937905_936281823863423301_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=doJt8xqEN0sQ7kNvgHwKfTM&_nc_zt=23&_nc_ht=scontent.fbaq5-1.fna&_nc_gid=AR0ThIl1DptpExwC00bxV4P&oh=00_AYCrt7u0ze9MJ5DVvH7Ju0Q7YhYSK6IczCeaecJOUkc34g&oe=6766E537" alt="Interior del Restaurante" class="img-principal">
+            <img src="https://media.istockphoto.com/id/875992018/es/foto/orgulloso-equipo-de-chef-sous-chefs-y-ayudantes-de-cocina-mirando-a-la-c%C3%A1mara-sonriendo.jpg?s=612x612&w=0&k=20&c=WGkMsBQA-tzpgXXODxnXW3-SVOFTXHbyCbUBe0uXQPU=" alt="Equipo de Chefs" class="img-secundaria">
+            <img src="https://media-cdn.tripadvisor.com/media/photo-s/14/48/89/d8/restaurante-fosforizate.jpg" alt="Plato Destacado" class="img-secundaria">
+        </div>
+    </div>
+</section>
+
+
+        <section id="contactos" class="seccion">
+            <h2>Contactos</h2>
+            <p>Encuéntranos en la costa y síguenos en nuestras redes sociales.</p>
+            
+            <!-- Formulario de Contacto -->
+            <form action="#" method="POST" class="form-contacto">
+                <div class="campo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="campo">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="campo">
+                    <label for="asunto">Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" required>
+                </div>
+                <div class="campo">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="animate__animated animate__heartBeat">Enviar Mensaje</button>
+            </form>
+        </section>
+
+        <!-- Pie de Página -->
+        <footer>
+            <div class="footer-contenido">
+                <div class="footer-info">
+                  <img src="https://images.rappi.com/restaurants_logo/fosforizate-logo-1608295646776.png?e=webp&d=10x10&q=10" alt="Logo Fosforízate"
+                    <p>&copy; 2024 Fosforízate - El Sabor del Mar</p>
+                    <p>Encuentra nuestra sucursal en Barranquilla y reserva tu mesa hoy mismo.</p>
+                </div>
+                <div class="footer-contacto">
+                    <h3>Contáctanos</h3>
+                    <p><strong>Email:</strong> info@fosforizate.com</p>
+                    <p><strong>Teléfono:</strong> +57 123 456 789</p>
+                  <p><strong>Creador 1:</strong> Diego Charry</p>
+                  <p><strong>Creador 2:</strong> Juan Pablo Figueroa</p>
+                  <p><strong>Creador 3:</strong> Adelfo Freyle</p>
+                </div>
+                <div class="footer-redes">
+                    <h3>Síguenos en Redes Sociales</h3>
+                    <a href="https://www.facebook.com/Fosforizate" target="_blank"><i class="fab fa-facebook icono-redes"></i></a>
+                    <a href="https://www.instagram.com/Fosforizate" target="_blank"><i class="fab fa-instagram icono-redes"></i></a>
+                    <a href="https://twitter.com/Fosforizate" target="_blank"><i class="fab fa-twitter icono-redes"></i></a>
+                    <a href="https://www.youtube.com/c/Fosforizate" target="_blank"><i class="fab fa-youtube icono-redes"></i></a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
